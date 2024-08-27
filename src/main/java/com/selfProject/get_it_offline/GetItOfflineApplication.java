@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AuctionLinkerApplication {
+public class GetItOfflineApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AuctionLinkerApplication.class, args);
+		SpringApplication.run(GetItOfflineApplication.class, args);
 	}
 
 }

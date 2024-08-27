@@ -27,6 +27,9 @@ public class PostEntity {
     private int postType; // 0: 장소, 1: 제품
 
     private Long placeOrProductID; // 장소 또는 제품 ID
+    @ManyToOne
+    @JoinColumn(name = "fileId")
+    private FileEntity attachedFile; // 첨부된 파일 (이미지 등)
 
     @ManyToOne
     @JoinColumn(name = "authorID")

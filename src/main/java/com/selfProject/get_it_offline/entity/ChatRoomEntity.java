@@ -3,8 +3,10 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
-
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import java.time.LocalDateTime;
 
 @Entity
@@ -13,17 +15,12 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ChatRoomEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long chatRoomID;
 
-    private LocalDateTime createdDate; // 채팅방 생성일
+    private String roomName;
 
-    @ManyToOne
-    @JoinColumn(name = "user1ID")
-    private UserEntity user1; // 채팅방의 사용자1(장소제공자)
-
-    @ManyToOne
-    @JoinColumn(name = "user2ID")
-    private UserEntity user2; // 채팅방의 사용자2(장소대여자)
+    private LocalDateTime createdDate;
 }

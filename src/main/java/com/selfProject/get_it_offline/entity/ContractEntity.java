@@ -20,7 +20,9 @@ public class ContractEntity {
 
     private Long placeID; // 장소 계약 ID
     private Long productID; // 제품 계약 ID
-    private Long contractFileID; // 계약서 파일 ID
+    @ManyToOne
+    @JoinColumn(name = "fileId")
+    private FileEntity contractFile; // 계약서 파일 (이미지 등)
 
     private LocalDateTime contractDate; // 계약 체결일
     private String status; // 계약 상태 ("IN_PROGRESS", "COMPLETED", "CANCELED")
